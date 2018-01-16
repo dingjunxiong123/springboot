@@ -1,0 +1,15 @@
+spring:
+ datasource:
+  platform: mysql
+  url: jdbc:mysql://127.0.0.1:3306/springboot?useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=CONVERT_TO_NULL&transformedBitIsBoolean=true&autoReconnect=true&failOverReadOnly=false&serverTimezone=Asia/Shanghai
+  username: root
+  password: 123456
+  driver-class-name: com.mysql.jdbc.Driver
+  type: com.alibaba.druid.pool.DruidDataSource
+  connectionProperties: druid.stat.mergeSql=true
+
+mybatis:
+ config-location: classpath:mybatisMapper/mybatis-config.xml
+ mapper-locations: classpath:mybatisMapper/mapper/*Mapper.xml
+ type-aliases-package: com.boot.entity
+ type-handlers-package: com.boot.mybatis.typehandler

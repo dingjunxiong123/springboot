@@ -1,0 +1,20 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+	<!-- spring-boot自带的org.springframework.web.multipart.MultipartFile和Multipart产生冲突。
+	如果同时使用了MultipartResolver 和ServletFileUpload，就会在iter.hasNext()返回false.然后整个循环就跳出去了。
+	整个问题产生的原因是Spring框架先调用了MultipartResolver 来处理http multi-part的请求。
+	这里http multipart的请求已经消耗掉。后面又交给ServletFileUpload ，那么ServletFileUpload 就获取不到相应的multi-part请求。
+	<filter>
+		<filter-name>xssFilter</filter-name>
+		<filter-class>com.zzsim.web.sercurity.filter.XssMemberInputFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>xssFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping> -->
+</web-app>
+
